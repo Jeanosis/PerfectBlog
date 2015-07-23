@@ -1,0 +1,57 @@
+﻿@model PerfectBlog.Models.Blog
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/content/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/content/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body class="blue-grey lighten-5">
+    <!-- jQuery is required by Materialize to function -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/materialize/materialize.min.js"></script>
+    <script type="text/javascript">        //custom JS code   </script>
+
+    <div class="blue darken-4" style="height: 300px;"></div>
+    <div class="row" style="margin-top: -11%">
+        <div class="z-depth-1 col s12 m8 l6 offset-m2 offset-l3 white">
+            <table>
+                <tr><td><b>@ViewBag.Blog.Name</b></td><td>@ViewBag.Blog.Owner.Login</td></tr>
+                <tr><td colspan="2">Records:</td></tr>
+                @foreach (var record in ViewBag.Blog.Records)
+                {
+                    <tr><td><i>@record.Value</i></td><td>@record.Blog.Name</td><td>@record.CreationTime</td></tr>
+                    <tr><td>Ratings:</td></tr>
+                    foreach (var rating in record.Ratings)
+                    {
+                        <tr><td>
+                        @if (rating.Value)
+                        {
+                            <i class="material-icons prefix">thumb_up</i>
+                        }
+                        else
+                        {
+                            <i class="material-icons prefix">thumb_down</i>
+                        }
+                        </td><td>@rating.Record.Value</td><td>@rating.Owner.Login</td></tr>
+                    }
+                    <tr><td>Comments:</td></tr>
+                    foreach (var comment in record.Comments)
+                    {
+                        <tr><td>@comment.Value</td><td>@comment.Record.Value</td><td>@comment.Owner.Login</td></tr>
+                    }
+                }
+            </table>
+        </div>
+        
+    </div>
+</body>
+</html>

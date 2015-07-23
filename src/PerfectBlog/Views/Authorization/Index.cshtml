@@ -1,0 +1,56 @@
+﻿@model PerfectBlog.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Authorization</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/content/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/content/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body class="blue-grey lighten-5">
+    <!-- jQuery is required by Materialize to function -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/materialize/materialize.min.js"></script>
+    <script type="text/javascript">        //custom JS code   </script>
+
+    <!--<div class="blue darken-4" style="height: 300px;"></div> -->
+    @if (!ViewBag.Authorized)
+    {
+        <div class="authorization_error">
+            <p>Incorrect login or password.</p>
+        </div>
+    }
+    <div> <!--style="margin-top: -11%;"-->
+        <div class="row">
+            <div class="col s12 m6 l4 offset-m3 offset-l4">
+                <h2 class="blue-text text-darken-4">Authetication</h2>
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div class="z-depth-1 col s12 m6 l4 offset-m3 offset-l4 white" style="padding: 20px;">
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        @Html.TextBox("Login", null, new { id = "login", @class = "validate" })
+                        <label for="login" data-error="wrong" data-success="right">Login</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">vpn_key</i>
+                        @Html.Password("Password", null, new { id = "password", @class = "validate" })
+                        <label for="password" data-error="wrong" data-success="right">Password</label>
+                    </div>
+                    <button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Submit<i class="material-icons">send</i></button>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

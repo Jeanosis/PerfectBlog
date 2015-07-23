@@ -1,0 +1,37 @@
+﻿@model PerfectBlog.Models.Blog
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/content/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/content/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body class="blue-grey lighten-5">
+    <!-- jQuery is required by Materialize to function -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/materialize/materialize.min.js"></script>
+    <script type="text/javascript">        //custom JS code   </script>
+
+    <div class="blue darken-4" style="height: 300px;"></div>
+    <div class="row" style="margin-top: -11%">
+        <div class="z-depth-1 col s12 m8 l6 offset-m2 offset-l3 white">
+            <div class="collection">
+                @foreach (var item in ViewBag.Blogs)
+                {
+                    <!-- Html.ActionLink(String.Format("{0} {1}", item.Name, item.Owner.Login), "Index", "Blog", new { Blog = ViewBag.Blogs[0] }, new { class = "collection-item" }) -->
+                    <a href="@Url.Action("Index", "Blog", new { blog = item })" class="collection-item"><b>@item.Name</b> @item.Owner.Login</a>
+                }
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

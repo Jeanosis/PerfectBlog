@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfectBlog", "PerfectBlog\PerfectBlog.csproj", "{ED6B0A07-44A5-4D8B-926C-3574C725A72D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfectBlog.Tests", "PerfectBlog.Tests\PerfectBlog.Tests.csproj", "{660017D6-C5C6-4C20-8C8D-7944D9E8258A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED6B0A07-44A5-4D8B-926C-3574C725A72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED6B0A07-44A5-4D8B-926C-3574C725A72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED6B0A07-44A5-4D8B-926C-3574C725A72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED6B0A07-44A5-4D8B-926C-3574C725A72D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{660017D6-C5C6-4C20-8C8D-7944D9E8258A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{660017D6-C5C6-4C20-8C8D-7944D9E8258A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{660017D6-C5C6-4C20-8C8D-7944D9E8258A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{660017D6-C5C6-4C20-8C8D-7944D9E8258A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
