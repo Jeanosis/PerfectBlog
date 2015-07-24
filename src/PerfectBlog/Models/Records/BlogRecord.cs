@@ -10,6 +10,7 @@ namespace PerfectBlog.Models.Records
         #region Properties
 
         public virtual Blog Blog { get; set; }
+        public virtual String Name { get; set; }
         public virtual IList<Rating> Ratings { get; set; }
         public virtual IList<Comment> Comments { get; set; }
 

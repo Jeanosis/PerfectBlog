@@ -42,10 +42,12 @@ namespace PerfectBlog.DAL
             return result;
         }
 
-        private static BlogRecord GetRecord(String value, User owner, Blog blog, int ratings, int comments)
+        private static BlogRecord GetRecord(String name, User owner, Blog blog, int ratings, int comments)
         {
-            var result = new BlogRecord() { Comments = new List<Comment>(), Value = value, Blog = blog, Ratings = new List<Rating>() };
+            var result = new BlogRecord() { Comments = new List<Comment>(), Name = name, Blog = blog, Ratings = new List<Rating>() };
 
+            result.Value = "Truncation\n" +
+                "To truncate long lines of text in an ellipsis, add the class truncate to the tag which contains the text. See an example below of a header being truncated inside a card.";
             for (int i = 0; i < ratings; i++)
             {
                 result.Ratings.Add(new Rating()

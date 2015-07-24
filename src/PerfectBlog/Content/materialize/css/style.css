@@ -1,4 +1,6 @@
-﻿.authorization_block
+﻿/*Custom*/
+
+.authorization_block
 {
     padding: 25px;
 }
@@ -7,6 +9,51 @@
 {
     background-color: red;
 }
+
+.blog-header
+{
+    padding: 15px 15px 7px 15px;
+}
+
+.floating-left
+{
+    left: -27.75px;
+}
+
+.floating-bottom
+{
+    bottom: 27.75px;
+}
+
+.info-block-large
+{
+    border-radius: 2px;
+}
+
+.main-block-large
+{
+    margin-top: -120px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+.right-block-large
+{
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    padding-left: 400px;
+}
+
+.add-floating-button
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+}
+
+/*Input fields*/
 
 .input-field label
 {
@@ -59,4 +106,29 @@
 .input-field .prefix.active
 {
     color: #0d47a1;
+}
+
+/*Collection*/
+
+.collection
+{
+    border-top: 1px solid #f5f5f5;
+}
+.collection .collection-item
+{
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.collection .collection-item:last-child
+{
+      border-bottom: none;
+}
+
+.collection a.collection-item {
+    color: black;
+}
+
+.collection a.collection-item:not(.active):hover
+{
+      background-color: #bbdefb;
 }

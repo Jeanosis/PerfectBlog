@@ -24,11 +24,6 @@ namespace PerfectBlog.Controllers
             return View();
         }
 
-        public ActionResult BlogLink(Blog blog)
-        {
-            return RedirectToAction("Index", "Blog", blog);
-        }
-
         /*[HttpGet]
         public ActionResult Index(User user)
         {

@@ -15,6 +15,7 @@ namespace PerfectBlog.DAL.Mappings
         {
             Id(x => x.Id, m => m.Generator(Generators.Guid));
 
+            Property(x => x.Name, m => m.Length(255));
             Property(x => x.Value, m => m.Length(255));
             Property(x => x.CreationTime);
 

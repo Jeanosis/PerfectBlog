@@ -28,7 +28,8 @@
                 <tr><td colspan="2">Records:</td></tr>
                 @foreach (var record in ViewBag.Blog.Records)
                 {
-                    <tr><td><i>@record.Value</i></td><td>@record.Blog.Name</td><td>@record.CreationTime</td></tr>
+                    <tr><td><i>@record.Name</i></td><td>@record.Blog.Name</td><td>@record.CreationTime</td></tr>
+                    <tr><td colspan="3">@record.Value</td></tr>
                     <tr><td>Ratings:</td></tr>
                     foreach (var rating in record.Ratings)
                     {
