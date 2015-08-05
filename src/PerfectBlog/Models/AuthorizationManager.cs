@@ -30,7 +30,7 @@ namespace PerfectBlog.Models
         #endregion
         #region Variables
 
-        private static int inactionInterval = 1;
+        private static int inactionInterval = 600;
         private static User loggedUser;
         private static DateTime lastActivityTime;
         

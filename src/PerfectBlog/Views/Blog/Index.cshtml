@@ -20,39 +20,58 @@
     <script type="text/javascript" src="~/Scripts/materialize/materialize.min.js"></script>
     <script type="text/javascript">        //custom JS code   </script>
 
-    <div class="blue darken-4" style="height: 300px;"></div>
-    <div class="row" style="margin-top: -11%">
-        <div class="z-depth-1 col s12 m8 l6 offset-m2 offset-l3 white">
-            <table>
-                <tr><td><b>@ViewBag.Blog.Name</b></td><td>@ViewBag.Blog.Owner.Login</td></tr>
-                <tr><td colspan="2">Records:</td></tr>
-                @foreach (var record in ViewBag.Blog.Records)
-                {
-                    <tr><td><i>@record.Name</i></td><td>@record.Blog.Name</td><td>@record.CreationTime</td></tr>
-                    <tr><td colspan="3">@record.Value</td></tr>
-                    <tr><td>Ratings:</td></tr>
-                    foreach (var rating in record.Ratings)
-                    {
-                        <tr><td>
-                        @if (rating.Value)
+    <div class="z-depth-1 blue lighten-1">
+        <div style="height: 260px"></div>
+        <div class="right-block-large">
+            <div><div class="add-floating-button"><a class="floating-bottom btn-floating btn-large waves-effect waves-light pink darken-3"><i class="material-icons">add</i></a></div></div>
+        </div>
+    </div>
+    <div class="main-block-large">
+        @foreach (var record in ViewBag.Blog.Records)
+        {
+            <div class="z-depth-1 white info-block-large" style="padding: 10px 10px 0px 10px">
+                <div class="valign-wrapper">
+                    <div style="width: 50px">
+                        <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                    </div>
+                    <div class="black-text valign" style="margin-left:10px">
+                        <a href="#!"><b>@record.Name</b></a> <br>
+                        @if (record.CreationTime.Date == DateTime.Now.Date)
                         {
-                            <i class="material-icons prefix">thumb_up</i>
+                            var result = DateTime.Now.Subtract(record.CreationTime);
+                            if (result.Hours != 0)
+                            {
+                                <span>@result.Hours hours ago</span>
+                            }
+                            else if (result.Minutes != 0)
+                            {
+                                <span>@result.Minutes minutes ago</span>
+                            }
+                            else
+                            {
+                                <span>A moment ago</span>
+                            }
                         }
                         else
                         {
-                            <i class="material-icons prefix">thumb_down</i>
+                            @record.CreationTime.Date
                         }
-                        </td><td>@rating.Record.Value</td><td>@rating.Owner.Login</td></tr>
-                    }
-                    <tr><td>Comments:</td></tr>
-                    foreach (var comment in record.Comments)
-                    {
-                        <tr><td>@comment.Value</td><td>@comment.Record.Value</td><td>@comment.Owner.Login</td></tr>
-                    }
-                }
-            </table>
-        </div>
-        
+                    </div>
+                </div>
+                <div>
+                    @record.Value
+                </div>
+                <div class="row valign-wrapper" style="border-top: 1px solid black; margin-top: 10px">
+                    <div class="col s6 valign left-align">
+                        <a href="#!">@record.Comments.Count Comments</a>
+                    </div>
+                    <div class="col s6 valign right-align">
+                        <a href="#!"><i class="material-icons prefix">thumb_up</i>@record.Ratings.Count</a>
+                        <a href="#!"><i class="material-icons prefix">thumb_down</i>@record.Ratings.Count</a>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </body>
 </html>

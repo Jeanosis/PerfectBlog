@@ -143,6 +143,7 @@
     <Content Include="App_Data\BlogDatabase_log.ldf">
       <DependentUpon>BlogDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\logo1.png" />
     <Content Include="Content\materialize\css\materialize.css" />
     <Content Include="Content\materialize\css\materialize.min.css" />
     <Content Include="Content\materialize\css\style.css" />
